@@ -1,7 +1,41 @@
 // ===========================
-// BILINGUAL FUNCTIONALITY - REMOVED
-// Site is now French only
+// BILINGUAL FUNCTIONALITY
 // ===========================
+
+let currentLanguage = 'fr'; // Default to French
+
+const langToggleBtn = document.getElementById('langToggle');
+
+if (langToggleBtn) {
+    langToggleBtn.addEventListener('click', () => {
+        currentLanguage = currentLanguage === 'en' ? 'fr' : 'en';
+        updateLanguage();
+    });
+}
+
+function updateLanguage() {
+    const elements = document.querySelectorAll('[data-en][data-fr]');
+    
+    elements.forEach(element => {
+        const enText = element.getAttribute('data-en');
+        const frText = element.getAttribute('data-fr');
+        
+        if (currentLanguage === 'en') {
+            element.textContent = enText;
+        } else {
+            element.textContent = frText;
+        }
+    });
+    
+    // Update language toggle button
+    if (langToggleBtn) {
+        if (currentLanguage === 'en') {
+            langToggleBtn.innerHTML = '<span class="flag">🇬🇧</span> EN';
+        } else {
+            langToggleBtn.innerHTML = '<span class="flag">🇫🇷</span> FR';
+        }
+    }
+}
 
 // ===========================
 // NAVIGATION
@@ -158,13 +192,46 @@ Cette demande a été soumise via le site web Le Jardin Eunice.`;
 }
 
 // ===========================
-// BACKGROUND MUSIC
+// BACKGROUND MUSIC PLAYLIST
 // ===========================
 
 const bgMusic = document.getElementById('bgMusic');
 const musicToggle = document.getElementById('musicToggle');
 let isMusicPlaying = false;
 let musicAttempted = false;
+
+// Music playlist - add all your music files here
+const musicPlaylist = [
+    'assets/music/background-music.mp3',
+    'assets/music/uplifted-vibes.mp3'
+];
+
+let currentTrackIndex = 0;
+
+// Function to load and play a track
+function loadTrack(index) {
+    if (index >= 0 && index < musicPlaylist.length) {
+        bgMusic.src = musicPlaylist[index];
+        currentTrackIndex = index;
+    }
+}
+
+// Function to play next track
+function playNextTrack() {
+    currentTrackIndex = (currentTrackIndex + 1) % musicPlaylist.length;
+    loadTrack(currentTrackIndex);
+    bgMusic.play().catch(error => console.log('Error playing next track:', error));
+}
+
+// Load first track on page load
+if (bgMusic && musicPlaylist.length > 0) {
+    loadTrack(0);
+}
+
+// Auto-play next track when current ends
+if (bgMusic) {
+    bgMusic.addEventListener('ended', playNextTrack);
+}
 
 // Function to start music
 function startMusic() {
@@ -216,24 +283,6 @@ window.addEventListener('load', () => {
         }
     }, 1000);
 });
-
-// ===========================
-// GALLERY LIGHTBOX (Optional Enhancement)
-// ===========================
-
-const galleryItems = document.querySelectorAll('.gallery-item');
-
-galleryItems.forEach(item => {
-    item.addEventListener('click', () => {
-        const img = item.querySelector('img');
-        // Simple image preview - can be enhanced with a modal
-        window.open(img.src, '_blank');
-    });
-});
-
-// ===========================
-// LANGUAGE TOGGLE EVENT - REMOVED
-// ===========================
 
 // ===========================
 // FLOATING BUTTONS ANIMATION
@@ -305,20 +354,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const backToTopButton = document.getElementById('backToTop');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 500) {
-        backToTopButton.classList.add('visible');
-    } else {
-        backToTopButton.classList.remove('visible');
-    }
-});
-
-backToTopButton.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+if (backToTopButton) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
+        }
     });
-});
+
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
 
 // ===========================
 // YEAR UPDATE IN FOOTER
@@ -329,6 +380,189 @@ const footerText = document.querySelector('.footer-bottom p');
 if (footerText) {
     footerText.innerHTML = footerText.innerHTML.replace('2024', currentYear);
 }
+
+// ===========================
+// GALLERY CAROUSEL & MODAL
+// ===========================
+
+const galleryCarousel = document.querySelector('.gallery-carousel');
+const carouselPrevBtn = document.querySelector('.carousel-prev');
+const carouselNextBtn = document.querySelector('.carousel-next');
+const viewLibraryBtn = document.querySelector('.view-library-btn');
+const galleryModal = document.getElementById('galleryModal');
+const modalGrid = document.querySelector('.gallery-modal-grid');
+const closeModal = document.querySelector('.gallery-modal-close');
+
+// Define image library - ADD YOUR IMAGES FROM assets/images/library/ FOLDER HERE
+// Format: { src: 'path/to/image.jpg', caption: 'French / English' }
+const imageLibrary = [
+    { src: 'assets/images/library/home works.jpeg', caption: 'Home Works / Home Works' },
+    { src: 'assets/images/library/lego lego.jpeg', caption: 'Lego Lego / Lego Lego' },
+    { src: 'assets/images/library/painting time.jpeg', caption: 'Painting Time / Painting Time' },
+    { src: 'assets/images/library/play time with instructor.jpeg', caption: 'Play Time With Instructor / Play Time With Instructor' }
+];
+
+// Shuffle array to get random images
+function shuffleArray(array) {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+}
+
+// Load carousel with random 10 images from library
+function loadCarousel() {
+    if (!galleryCarousel) return;
+    
+    if (imageLibrary.length === 0) {
+        // Show message if no images
+        galleryCarousel.innerHTML = `
+            <div style="width: 100%; padding: 60px 20px; text-align: center; color: #666;">
+                <i class="fas fa-images" style="font-size: 4rem; margin-bottom: 20px; color: #A8C5A0;"></i>
+                <h3 style="margin: 20px 0 10px; color: #333;">Aucune image disponible / No images available</h3>
+                <p style="margin: 0;">Ajoutez des images au dossier <code>assets/images/library/</code> et exécutez <code>node generate-media-arrays.js</code></p>
+                <p style="margin: 10px 0 0;">Add images to the <code>assets/images/library/</code> folder and run <code>node generate-media-arrays.js</code></p>
+            </div>
+        `;
+        if (viewLibraryBtn) viewLibraryBtn.style.display = 'none';
+        return;
+    }
+    
+    const randomImages = shuffleArray(imageLibrary).slice(0, Math.min(10, imageLibrary.length));
+    
+    galleryCarousel.innerHTML = randomImages.map(image => `
+        <div class="gallery-item" data-src="${image.src}" data-caption="${image.caption}">
+            <img src="${image.src}" alt="${image.caption}" loading="lazy">
+        </div>
+    `).join('');
+    
+    // Add click handlers to carousel items
+    const carouselItems = galleryCarousel.querySelectorAll('.gallery-item');
+    carouselItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            // Find the index in the full library
+            const src = item.getAttribute('data-src');
+            const libraryIndex = imageLibrary.findIndex(img => img.src === src);
+            if (libraryIndex !== -1) {
+                currentImageIndex = libraryIndex;
+                openImageModal();
+            }
+        });
+    });
+}
+
+// Carousel scroll functions
+if (carouselPrevBtn) {
+    carouselPrevBtn.addEventListener('click', () => {
+        galleryCarousel.scrollBy({ left: -320, behavior: 'smooth' });
+    });
+}
+
+if (carouselNextBtn) {
+    carouselNextBtn.addEventListener('click', () => {
+        galleryCarousel.scrollBy({ left: 320, behavior: 'smooth' });
+    });
+}
+
+// Modal image slider
+const modalImage = document.getElementById('modalImage');
+const modalCaption = document.querySelector('.gallery-modal-caption');
+const modalCounter = document.querySelector('.gallery-modal-counter');
+const modalPrevBtn = document.querySelector('.gallery-modal-prev');
+const modalNextBtn = document.querySelector('.gallery-modal-next');
+let currentImageIndex = 0;
+
+// Open modal with single image
+function openImageModal() {
+    if (!galleryModal || imageLibrary.length === 0) return;
+    
+    updateModalImage();
+    galleryModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Update modal image display
+function updateModalImage() {
+    if (!modalImage || !imageLibrary[currentImageIndex]) return;
+    
+    modalImage.src = imageLibrary[currentImageIndex].src;
+    if (modalCaption) {
+        modalCaption.textContent = imageLibrary[currentImageIndex].caption;
+    }
+    if (modalCounter) {
+        modalCounter.textContent = `${currentImageIndex + 1} / ${imageLibrary.length}`;
+    }
+}
+
+// Navigate to previous image
+function showPrevImage() {
+    currentImageIndex = (currentImageIndex - 1 + imageLibrary.length) % imageLibrary.length;
+    updateModalImage();
+}
+
+// Navigate to next image
+function showNextImage() {
+    currentImageIndex = (currentImageIndex + 1) % imageLibrary.length;
+    updateModalImage();
+}
+
+// Modal navigation button handlers
+if (modalPrevBtn) {
+    modalPrevBtn.addEventListener('click', showPrevImage);
+}
+
+if (modalNextBtn) {
+    modalNextBtn.addEventListener('click', showNextImage);
+}
+
+// Open modal when clicking "View Library" button
+if (viewLibraryBtn) {
+    viewLibraryBtn.addEventListener('click', () => {
+        if (imageLibrary.length > 0) {
+            currentImageIndex = 0;
+            openImageModal();
+        }
+    });
+}
+
+// Close modal
+function closeModalFunc() {
+    if (galleryModal) {
+        galleryModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+if (closeModal) {
+    closeModal.addEventListener('click', closeModalFunc);
+}
+
+// Close modal when clicking outside
+if (galleryModal) {
+    galleryModal.addEventListener('click', (e) => {
+        if (e.target === galleryModal) {
+            closeModalFunc();
+        }
+    });
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (galleryModal && galleryModal.classList.contains('active')) {
+        if (e.key === 'Escape') {
+            closeModalFunc();
+        } else if (e.key === 'ArrowLeft') {
+            showPrevImage();
+        } else if (e.key === 'ArrowRight') {
+            showNextImage();
+        }
+    }
+});
+
+// Initialize carousel on page load
+loadCarousel();
 
 // ===========================
 // CONSOLE WELCOME MESSAGE

@@ -1,8 +1,12 @@
 # Background Music Setup
 
-## How to Add Music
+## 🎵 Playlist Feature - Now Supports Multiple Songs!
 
-1. **Find a royalty-free music file:**
+The music player now supports **playlists** - it will automatically play the next song when one finishes and loop back to the beginning.
+
+## How to Add More Music
+
+1. **Find royalty-free music files:**
    - [Pixabay Music](https://pixabay.com/music/) - Free downloads
    - [YouTube Audio Library](https://www.youtube.com/audiolibrary) - Royalty-free
    - [Free Music Archive](https://freemusicarchive.org/) - Creative Commons
@@ -13,18 +17,30 @@
    - Nature sounds (birds, water)
    - Soft classical music
 
-3. **Save the file:**
-   - Name it: `background-music.mp3`
-   - Place it in this folder: `/assets/music/`
-   - Keep file size under 5MB for faster loading
+3. **Save the files:**
+   - Add MP3 files to this folder: `/assets/music/`
+   - Name them descriptively: `song1.mp3`, `song2.mp3`, `lullaby.mp3`, etc.
+   - Keep each file under 5MB for faster loading
 
-## Auto-Play Feature
+## Update the Playlist
 
-✅ **Now Enabled!**
-- Music will automatically start playing when the page loads
-- If browser blocks autoplay, it will start on first user click
-- The music button shows play/pause status
-- Users can pause/resume anytime with the music button
+After adding music files, update the `musicPlaylist` array in `js/script.js` (around line 200):
+
+```javascript
+const musicPlaylist = [
+    'assets/music/background-music.mp3',
+    'assets/music/song2.mp3',
+    'assets/music/lullaby.mp3',
+    // Add more files here...
+];
+```
+
+## Playlist Features
+
+- ✅ **Auto-advance**: Next song plays automatically when one ends
+- ✅ **Loop playlist**: After last song, starts from the beginning
+- ✅ **Auto-play**: Music starts on page load or first click
+- ✅ **Play/Pause control**: Toggle with the music button
 
 ## Music Button
 
@@ -35,8 +51,11 @@
 
 ## File Size Tips
 
-- Aim for 2-5MB maximum
+- Aim for 2-5MB per file
 - Use 128kbps or 192kbps MP3 quality
 - Compress large files at [MP3Smaller.com](https://www.mp3smaller.com/)
 
-Once you add `background-music.mp3` here, it will work automatically! 🎶
+---
+
+**Current Status**: 1 song in playlist (`background-music.mp3`)
+
