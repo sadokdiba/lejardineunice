@@ -1,57 +1,7 @@
 // ===========================
-// BILINGUAL FUNCTIONALITY
+// BILINGUAL FUNCTIONALITY - REMOVED
+// Site is now French only
 // ===========================
-
-let currentLanguage = 'fr'; // Default to French
-
-const translations = {
-    en: {
-        flag: '🇬🇧'
-    },
-    fr: {
-        flag: '🇫🇷'
-    }
-};
-
-function toggleLanguage() {
-    currentLanguage = currentLanguage === 'en' ? 'fr' : 'en';
-    updateLanguage();
-}
-
-function updateLanguage() {
-    const elements = document.querySelectorAll('[data-en][data-fr]');
-    
-    elements.forEach(element => {
-        const text = element.getAttribute(`data-${currentLanguage}`);
-        
-        // Update text content for most elements
-        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-            // For form inputs, update placeholder if needed
-            if (element.placeholder) {
-                element.placeholder = text;
-            }
-        } else if (element.tagName === 'OPTION') {
-            // For dropdown options
-            element.textContent = text;
-        } else if (element.tagName === 'BUTTON' && element.classList.contains('submit-button')) {
-            // For submit button
-            element.textContent = text;
-        } else {
-            element.textContent = text;
-        }
-    });
-
-    // Update language toggle button
-    const langToggle = document.getElementById('langToggle');
-    if (currentLanguage === 'en') {
-        langToggle.innerHTML = '<span class="flag">🇬🇧</span> EN / <span class="flag">🇫🇷</span> FR';
-    } else {
-        langToggle.innerHTML = '<span class="flag">🇫🇷</span> FR / <span class="flag">🇬🇧</span> EN';
-    }
-
-    // Update HTML lang attribute
-    document.documentElement.lang = currentLanguage;
-}
 
 // ===========================
 // NAVIGATION
@@ -148,43 +98,38 @@ document.addEventListener('DOMContentLoaded', () => {
             observer.observe(item);
         }, index * 50);
     });
+
+    // Observe slide-in elements
+    const slideInElements = document.querySelectorAll('.slide-in-left, .slide-in-right, .fade-in-section, .zoom-in');
+    slideInElements.forEach(element => {
+        observer.observe(element);
+    });
 });
 
 // ===========================
 // CONTACT FORM - MAILTO
 // ===========================
+// FORM SUBMISSION - REMOVED LANGUAGE DETECTION
+// ===========================
 
 const contactForm = document.getElementById('contactForm');
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Get form values
-    const parentName = document.getElementById('parentName').value;
-    const childAge = document.getElementById('childAge').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const serviceType = document.getElementById('serviceType').value;
-    const message = document.getElementById('message').value;
-    
-    // Construct email subject and body
-    const subject = currentLanguage === 'en' 
-        ? `New Inquiry from ${parentName}` 
-        : `Nouvelle demande de ${parentName}`;
-    
-    const body = currentLanguage === 'en'
-        ? `Parent Name: ${parentName}
-Child Age: ${childAge}
-Email: ${email}
-Phone: ${phone}
-Service Type: ${serviceType}
-
-Message:
-${message}
-
----
-This inquiry was submitted through the Le Jardin Eunice website.`
-        : `Nom du parent: ${parentName}
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form values
+        const parentName = document.getElementById('parentName').value;
+        const childAge = document.getElementById('childAge').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const serviceType = document.getElementById('serviceType').value;
+        const message = document.getElementById('message').value;
+        
+        // Construct email subject and body
+        const subject = `Nouvelle demande de ${parentName}`;
+        
+        const body = `Nom du parent: ${parentName}
 Âge de l'enfant: ${childAge}
 Courriel: ${email}
 Téléphone: ${phone}
@@ -195,23 +140,22 @@ ${message}
 
 ---
 Cette demande a été soumise via le site web Le Jardin Eunice.`;
-    
-    // Create mailto link
-    const mailtoLink = `mailto:info@lejardineunice.ca?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
-    // Open default email client
-    window.location.href = mailtoLink;
-    
-    // Optional: Show confirmation message
-    const confirmMsg = currentLanguage === 'en'
-        ? 'Opening your email client... If it doesn\'t open automatically, please email us at info@lejardineunice.ca'
-        : 'Ouverture de votre client de messagerie... S\'il ne s\'ouvre pas automatiquement, veuillez nous envoyer un courriel à info@lejardineunice.ca';
-    
-    alert(confirmMsg);
-    
-    // Reset form
-    contactForm.reset();
-});
+        
+        // Create mailto link
+        const mailtoLink = `mailto:info@lejardineunice.ca?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+        // Open default email client
+        window.location.href = mailtoLink;
+        
+        // Optional: Show confirmation message
+        const confirmMsg = 'Ouverture de votre client de messagerie... S\'il ne s\'ouvre pas automatiquement, veuillez nous envoyer un courriel à info@lejardineunice.ca';
+        
+        alert(confirmMsg);
+        
+        // Reset form
+        contactForm.reset();
+    });
+}
 
 // ===========================
 // BACKGROUND MUSIC
@@ -288,10 +232,8 @@ galleryItems.forEach(item => {
 });
 
 // ===========================
-// LANGUAGE TOGGLE EVENT
+// LANGUAGE TOGGLE EVENT - REMOVED
 // ===========================
-
-document.getElementById('langToggle').addEventListener('click', toggleLanguage);
 
 // ===========================
 // FLOATING BUTTONS ANIMATION
@@ -299,18 +241,20 @@ document.getElementById('langToggle').addEventListener('click', toggleLanguage);
 
 const floatingButtons = document.querySelector('.floating-buttons');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        floatingButtons.style.opacity = '1';
-        floatingButtons.style.transform = 'translateY(0)';
-    } else {
-        floatingButtons.style.opacity = '0';
-        floatingButtons.style.transform = 'translateY(100px)';
-    }
-});
+if (floatingButtons) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            floatingButtons.style.opacity = '1';
+            floatingButtons.style.transform = 'translateY(0)';
+        } else {
+            floatingButtons.style.opacity = '0';
+            floatingButtons.style.transform = 'translateY(100px)';
+        }
+    });
 
-// Initialize floating buttons style
-floatingButtons.style.transition = 'all 0.3s ease';
+    // Initialize floating buttons style
+    floatingButtons.style.transition = 'all 0.3s ease';
+}
 
 // ===========================
 // FORM VALIDATION ENHANCEMENT
@@ -345,11 +289,14 @@ window.addEventListener('load', () => {
 // ===========================
 
 document.addEventListener('DOMContentLoaded', () => {
-    updateLanguage();
+    // Site is now French only - no language toggle needed
     
     // Set initial floating buttons state
-    floatingButtons.style.opacity = '0';
-    floatingButtons.style.transform = 'translateY(100px)';
+    const floatingButtons = document.querySelector('.floating-buttons');
+    if (floatingButtons) {
+        floatingButtons.style.opacity = '0';
+        floatingButtons.style.transform = 'translateY(100px)';
+    }
 });
 
 // ===========================

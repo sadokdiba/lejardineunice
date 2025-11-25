@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Quicksand:wght@400;500;600;700&family=Bubblegum+Sans&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -25,10 +25,10 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="logo">
+            <a href="index.html" class="logo">
                 <img src="assets/images/logo-square.png" alt="Le Jardin Eunice Logo" id="logoImg">
                 <span data-en="Le Jardin Eunice" data-fr="Le Jardin Eunice">Le Jardin Eunice</span>
-            </div>
+            </a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html" data-en="Home" data-fr="Accueil">Accueil</a></li>
                 <li><a href="pages/about.html" data-en="About" data-fr="À Propos">À Propos</a></li>
@@ -190,30 +190,53 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Le Jardin Eunice</h3>
-                    <p data-en="Creating beautiful memories, one day at a time." data-fr="Créer de beaux souvenirs, un jour à la fois.">
-                        Creating beautiful memories, one day at a time.
+                    <h3>🌸 Le Jardin Eunice</h3>
+                    <p data-en="Creating beautiful memories, one day at a time. Your child's happiness is our priority!" data-fr="Créer de beaux souvenirs, un jour à la fois. Le bonheur de votre enfant est notre priorité!">
+                        Creating beautiful memories, one day at a time. Your child's happiness is our priority!
                     </p>
+                    <p style="margin-top: 15px;"><i class="fas fa-map-marker-alt"></i> 123 Rue Principale, Saint-Jérôme, QC</p>
+                    <p><i class="fas fa-phone"></i> (514) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@jardindeunice.com</p>
                 </div>
                 <div class="footer-section">
                     <h4 data-en="Quick Links" data-fr="Liens Rapides">Quick Links</h4>
                     <ul>
-                        <li><a href="#home" data-en="Home" data-fr="Accueil">Home</a></li>
-                        <li><a href="#about" data-en="About" data-fr="À Propos">About</a></li>
-                        <li><a href="#services" data-en="Services" data-fr="Services">Services</a></li>
-                        <li><a href="#contact" data-en="Contact" data-fr="Contact">Contact</a></li>
+                        <li><a href="#home" data-en="Home" data-fr="Accueil"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="pages/about.html" data-en="About" data-fr="À Propos"><i class="fas fa-info-circle"></i> About</a></li>
+                        <li><a href="#services" data-en="Services" data-fr="Services"><i class="fas fa-hands-helping"></i> Services</a></li>
+                        <li><a href="#gallery" data-en="Gallery" data-fr="Galerie"><i class="fas fa-images"></i> Gallery</a></li>
+                        <li><a href="pages/contact.html" data-en="Contact" data-fr="Contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Opening Hours" data-fr="Heures d'ouverture">Opening Hours</h4>
+                    <ul>
+                        <li><i class="fas fa-clock"></i> Monday - Friday: 7:00 AM - 6:00 PM</li>
+                        <li><i class="fas fa-calendar-times"></i> Saturday & Sunday: Closed</li>
+                    </ul>
+                    <h4 style="margin-top: 25px;" data-en="Age Groups" data-fr="Groupes d'âge">Age Groups</h4>
+                    <ul>
+                        <li><i class="fas fa-baby"></i> Infants (0-18 months)</li>
+                        <li><i class="fas fa-child"></i> Toddlers (18 months - 3 years)</li>
+                        <li><i class="fas fa-graduation-cap"></i> Preschool (3-5 years)</li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4 data-en="Follow Us" data-fr="Suivez-nous">Follow Us</h4>
+                    <p data-en="Stay connected with us!" data-fr="Restez connectés avec nous!">Stay connected with us!</p>
                     <div class="social-links">
                         <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                         <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/15141234567" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <a href="pages/contact.html" class="cta-button" style="font-size: 0.9rem; padding: 12px 25px;">📞 Enroll Now!</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Le Jardin Eunice. <span data-en="All rights reserved." data-fr="Tous droits réservés.">All rights reserved.</span></p>
+                <p>🌈 &copy; 2024 Le Jardin Eunice. <span data-en="All rights reserved. Made with ❤️ for children" data-fr="Tous droits réservés. Fait avec ❤️ pour les enfants">All rights reserved. Made with ❤️ for children</span> 🌈</p>
             </div>
         </div>
     </footer>
