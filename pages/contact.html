@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contactez Le Jardin d'Eunice - Garderie bilingue à Saint-Jérôme">
+    <title>Contact - Le Jardin d'Eunice</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Language Toggle & Music Control -->
+    <div class="top-controls">
+        <button id="langToggle" class="lang-toggle" aria-label="Change Language">
+            <span class="flag">🇬🇧</span> EN / <span class="flag">🇫🇷</span> FR
+        </button>
+        <button id="musicToggle" class="music-toggle" aria-label="Toggle Music">
+            <i class="fas fa-music"></i>
+        </button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="assets/images/logo-square.png" alt="Le Jardin Eunice Logo" id="logoImg">
+                <span data-en="Le Jardin d'Eunice" data-fr="Le Jardin d'Eunice">Le Jardin d'Eunice</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html" data-en="Home" data-fr="Accueil">Accueil</a></li>
+                <li><a href="about.html" data-en="About" data-fr="À Propos">À Propos</a></li>
+                <li><a href="../index.html#services" data-en="Services" data-fr="Services">Services</a></li>
+                <li><a href="../index.html#gallery" data-en="Gallery" data-fr="Galerie">Galerie</a></li>
+                <li><a href="contact.html" class="active" data-en="Contact" data-fr="Contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1 class="page-title animate-fade-in" data-en="Get In Touch" data-fr="Contactez-nous">
+                Contactez-nous
+            </h1>
+            <p class="page-subtitle animate-fade-in-delay" data-en="We'd love to hear from you!" data-fr="Nous serions ravis d'avoir de vos nouvelles!">
+                Nous serions ravis d'avoir de vos nouvelles!
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-main section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info slide-in-left">
+                    <h2 data-en="Visit Us" data-fr="Visitez-nous">Visitez-nous</h2>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4 data-en="Address" data-fr="Adresse">Adresse</h4>
+                            <p>1655 Mnt Sainte-Thérèse<br>Saint-Jérôme, QC J5L 2P3</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4 data-en="Phone" data-fr="Téléphone">Téléphone</h4>
+                            <p><a href="tel:+15141234567">(514) 123-4567</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4 data-en="Email" data-fr="Courriel">Courriel</h4>
+                            <p><a href="mailto:info@lejardineunice.ca">info@lejardineunice.ca</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4 data-en="Hours" data-fr="Heures">Heures</h4>
+                            <p data-en="Monday - Friday: 7:00 AM - 6:00 PM" data-fr="Lundi - Vendredi: 7h00 - 18h00">
+                                Lundi - Vendredi: 7h00 - 18h00
+                            </p>
+                        </div>
+                    </div>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3270.20596507956!2d-74.04258572340247!3d45.805153310624654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccf2c467bdd152d%3A0x536d567c87622385!2zMTY1NSBNbnQgU2FpbnRlLVRow6lyw6hzZSwgU2FpbnQtSsOpcsO0bWUsIFFDIEo1TCAyUDM!5e1!3m2!1sen!2sca!4v1764092478678!5m2!1sen!2sca" width="100%" height="300" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="contact-form-container slide-in-right">
+                    <h2 data-en="Send Us a Message" data-fr="Envoyez-nous un Message">Envoyez-nous un Message</h2>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="parentName" data-en="Parent Name *" data-fr="Nom du Parent *">Nom du Parent *</label>
+                            <input type="text" id="parentName" name="parentName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="childAge" data-en="Child Age *" data-fr="Âge de l'Enfant *">Âge de l'Enfant *</label>
+                            <input type="text" id="childAge" name="childAge" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-en="Email *" data-fr="Courriel *">Courriel *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" data-en="Phone *" data-fr="Téléphone *">Téléphone *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="serviceType" data-en="Service Type *" data-fr="Type de Service *">Type de Service *</label>
+                            <select id="serviceType" name="serviceType" required>
+                                <option value="" data-en="-- Select a service --" data-fr="-- Sélectionner un service --">-- Sélectionner un service --</option>
+                                <option value="Infant Care (0-18 months)" data-en="Infant Care (0-18 months)" data-fr="Soins pour Bébés (0-18 mois)">Soins pour Bébés (0-18 mois)</option>
+                                <option value="Toddler Program (18 months - 3 years)" data-en="Toddler Program (18 months - 3 years)" data-fr="Programme Tout-Petits (18 mois - 3 ans)">Programme Tout-Petits (18 mois - 3 ans)</option>
+                                <option value="Preschool (3-5 years)" data-en="Preschool (3-5 years)" data-fr="Préscolaire (3-5 ans)">Préscolaire (3-5 ans)</option>
+                                <option value="Full-Time" data-en="Full-Time" data-fr="Temps Plein">Temps Plein</option>
+                                <option value="Part-Time" data-en="Part-Time" data-fr="Temps Partiel">Temps Partiel</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-en="Message *" data-fr="Message *">Message *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button" data-en="Send Message" data-fr="Envoyer le Message">
+                            Envoyer le Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Le Jardin d'Eunice</h3>
+                    <p data-en="Creating beautiful memories, one day at a time." data-fr="Créer de beaux souvenirs, un jour à la fois.">
+                        Créer de beaux souvenirs, un jour à la fois.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Quick Links" data-fr="Liens Rapides">Liens Rapides</h4>
+                    <ul>
+                        <li><a href="index.html" data-en="Home" data-fr="Accueil">Accueil</a></li>
+                        <li><a href="about.html" data-en="About" data-fr="À Propos">À Propos</a></li>
+                        <li><a href="index.html#services" data-en="Services" data-fr="Services">Services</a></li>
+                        <li><a href="contact.html" data-en="Contact" data-fr="Contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Follow Us" data-fr="Suivez-nous">Suivez-nous</h4>
+                    <div class="social-links">
+                        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Le Jardin d'Eunice. <span data-en="All rights reserved." data-fr="Tous droits réservés.">Tous droits réservés.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/15141234567" class="fab-button whatsapp" target="_blank" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+15141234567" class="fab-button phone" aria-label="Call Us">
+            <i class="fas fa-phone"></i>
+        </a>
+        <a href="https://facebook.com" class="fab-button facebook" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+    </div>
+
+    <!-- Audio Element for Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="../assets/music/background-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

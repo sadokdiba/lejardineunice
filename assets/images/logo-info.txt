@@ -1,0 +1,5 @@
+<!-- Place your logo files here:
+   - logo-square.png (the square version with border)
+   - logo-text.png (the text-only version)
+   
+   I'll create placeholder instructions - you can replace with actual files -->

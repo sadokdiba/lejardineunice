@@ -1,0 +1,26 @@
+<!-- 
+    BACKGROUND MUSIC INSTRUCTIONS
+    
+    To add soothing background music:
+    
+    1. Find a royalty-free music file:
+       - Pixabay Music: https://pixabay.com/music/
+       - YouTube Audio Library: https://www.youtube.com/audiolibrary
+       - Free Music Archive: https://freemusicarchive.org/
+    
+    2. Download an MP3 file (recommended: lullaby, nature sounds, or gentle piano)
+    
+    3. Save it as "background-music.mp3" in this folder
+    
+    4. Keep the file size small (under 5MB) for faster loading
+    
+    5. Users can toggle the music on/off with the music button in the top right
+    
+    Recommended search terms:
+    - "children's lullaby"
+    - "gentle piano music"
+    - "nature sounds for kids"
+    - "peaceful background music"
+    
+    Note: Music will NOT auto-play (browser restrictions). Users must click the music button.
+-->

@@ -1,0 +1,16 @@
+<!-- 
+    LOGO PLACEHOLDER
+    
+    To add your logo:
+    1. Replace this file with your logo image (logo.png)
+    2. Recommended size: 200px width, transparent background
+    3. Supported formats: PNG (preferred), JPG, SVG
+    
+    The logo colors should match:
+    - Primary: #FFB6C1 (Soft Pink)
+    - Secondary: #87CEEB (Sky Blue)
+    - Accent: #FFD700 (Golden Yellow)
+    
+    You mentioned you have a logo - please save it as "logo.png" in this folder.
+    The CSS is already configured to display it at 50px height with auto width.
+-->

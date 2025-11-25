@@ -1,0 +1,4 @@
+<!-- Place your background music file here:
+   - background-music.mp3
+   
+   Once added, it will auto-play when the page loads (with user interaction) -->

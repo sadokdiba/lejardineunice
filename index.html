@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Le Jardin Eunice - Garderie bilingue à Saint-Jérôme, Québec | Bilingual daycare in Saint-Jérôme, Quebec">
+    <title>Le Jardin d'Eunice - Garderie Éducative / Educational Daycare</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Language Toggle & Music Control -->
+    <div class="top-controls">
+        <button id="langToggle" class="lang-toggle" aria-label="Change Language">
+            <span class="flag">🇬🇧</span> EN / <span class="flag">🇫🇷</span> FR
+        </button>
+        <button id="musicToggle" class="music-toggle" aria-label="Toggle Music">
+            <i class="fas fa-music"></i>
+        </button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="assets/images/logo-square.png" alt="Le Jardin Eunice Logo" id="logoImg">
+                <span data-en="Le Jardin Eunice" data-fr="Le Jardin Eunice">Le Jardin Eunice</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" data-en="Home" data-fr="Accueil">Accueil</a></li>
+                <li><a href="pages/about.html" data-en="About" data-fr="À Propos">À Propos</a></li>
+                <li><a href="#services" data-en="Services" data-fr="Services">Services</a></li>
+                <li><a href="#gallery" data-en="Gallery" data-fr="Galerie">Galerie</a></li>
+                <li><a href="pages/contact.html" data-en="Contact" data-fr="Contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title animate-fade-in" data-en="Welcome to Le Jardin Eunice" data-fr="Bienvenue au Jardin Eunice">
+                Welcome to Le Jardin Eunice
+            </h1>
+            <p class="hero-subtitle animate-fade-in-delay" data-en="A nurturing bilingual environment where your child blooms" data-fr="Un environnement bilingue bienveillant où votre enfant s'épanouit">
+                A nurturing bilingual environment where your child blooms
+            </p>
+            <a href="#contact" class="cta-button animate-fade-in-delay-2" data-en="Enroll Now" data-fr="Inscrivez-vous">
+                Enroll Now
+            </a>
+        </div>
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+        <div class="container">
+            <h2 class="section-title" data-en="Our Services" data-fr="Nos Services">Our Services</h2>
+            <p class="section-subtitle" data-en="Comprehensive care tailored to your child's needs" data-fr="Des soins complets adaptés aux besoins de votre enfant">
+                Comprehensive care tailored to your child's needs
+            </p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3 data-en="Infant Care (0-18 months)" data-fr="Soins pour Bébés (0-18 mois)">Infant Care (0-18 months)</h3>
+                    <p data-en="Gentle care for your little one with personalized attention, bottle feeding, and nap schedules." 
+                       data-fr="Soins doux pour votre petit avec attention personnalisée, biberon et horaires de sieste.">
+                        Gentle care for your little one with personalized attention, bottle feeding, and nap schedules.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3 data-en="Toddler Program (18 months - 3 years)" data-fr="Programme Tout-Petits (18 mois - 3 ans)">Toddler Program (18 months - 3 years)</h3>
+                    <p data-en="Active learning through play, basic language skills, and social development in both languages." 
+                       data-fr="Apprentissage actif par le jeu, compétences linguistiques de base et développement social dans les deux langues.">
+                        Active learning through play, basic language skills, and social development in both languages.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 data-en="Preschool (3-5 years)" data-fr="Préscolaire (3-5 ans)">Preschool (3-5 years)</h3>
+                    <p data-en="School readiness program with early literacy, math, science, and art activities." 
+                       data-fr="Programme de préparation à l'école avec alphabétisation précoce, mathématiques, sciences et activités artistiques.">
+                        School readiness program with early literacy, math, science, and art activities.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 data-en="Full-Time & Part-Time" data-fr="Temps Plein & Temps Partiel">Full-Time & Part-Time</h3>
+                    <p data-en="Flexible scheduling options to accommodate your family's needs." 
+                       data-fr="Options d'horaire flexibles pour répondre aux besoins de votre famille.">
+                        Flexible scheduling options to accommodate your family's needs.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 data-en="Nutritious Meals" data-fr="Repas Nutritifs">Nutritious Meals</h3>
+                    <p data-en="Healthy breakfast, lunch, and snacks prepared fresh daily with love." 
+                       data-fr="Petit-déjeuner, déjeuner et collations sains préparés frais quotidiennement avec amour.">
+                        Healthy breakfast, lunch, and snacks prepared fresh daily with love.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shapes"></i>
+                    </div>
+                    <h3 data-en="Educational Activities" data-fr="Activités Éducatives">Educational Activities</h3>
+                    <p data-en="Music, art, outdoor play, and hands-on learning experiences." 
+                       data-fr="Musique, art, jeux extérieurs et expériences d'apprentissage pratiques.">
+                        Music, art, outdoor play, and hands-on learning experiences.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery section">
+        <div class="container">
+            <h2 class="section-title" data-en="Our Happy Garden" data-fr="Notre Jardin Joyeux">Our Happy Garden</h2>
+            <p class="section-subtitle" data-en="A glimpse into daily life at Le Jardin Eunice" data-fr="Un aperçu de la vie quotidienne au Jardin Eunice">
+                A glimpse into daily life at Le Jardin Eunice
+            </p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&h=400&fit=crop" alt="Children playing">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1576495199011-eb94736d05d6?w=600&h=400&fit=crop" alt="Art activities">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&h=400&fit=crop" alt="Children learning">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=600&h=400&fit=crop" alt="Kids playing together">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1560421683-6856ea585c78?w=600&h=400&fit=crop" alt="Music and dance time">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=600&h=400&fit=crop" alt="Learning together">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Le Jardin Eunice</h3>
+                    <p data-en="Creating beautiful memories, one day at a time." data-fr="Créer de beaux souvenirs, un jour à la fois.">
+                        Creating beautiful memories, one day at a time.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Quick Links" data-fr="Liens Rapides">Quick Links</h4>
+                    <ul>
+                        <li><a href="#home" data-en="Home" data-fr="Accueil">Home</a></li>
+                        <li><a href="#about" data-en="About" data-fr="À Propos">About</a></li>
+                        <li><a href="#services" data-en="Services" data-fr="Services">Services</a></li>
+                        <li><a href="#contact" data-en="Contact" data-fr="Contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Follow Us" data-fr="Suivez-nous">Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Le Jardin Eunice. <span data-en="All rights reserved." data-fr="Tous droits réservés.">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/15141234567" class="fab-button whatsapp" target="_blank" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+15141234567" class="fab-button phone" aria-label="Call Us">
+            <i class="fas fa-phone"></i>
+        </a>
+        <a href="https://facebook.com" class="fab-button facebook" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+    </div>
+
+    <!-- Audio Element for Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="assets/music/background-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
